@@ -13,6 +13,7 @@ Mostrar(){
 
 }
 
+
 class ProdutoDestaque extends produto{
 constructor(nome,datadecadastro, descricao ,preco , img){
 super(nome,datadecadastro, descricao ,preco)
