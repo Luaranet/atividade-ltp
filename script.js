@@ -1,41 +1,39 @@
 // divListaProduto.insertAdjacentHTML('afterbegin', '');
 class Produto {
-    constructor(nome, datadecadastro, descricao, preco){
-         this.nome = nome;
-         this.datadecadastro = cadastro;
-         this.descricao = descricao;
-         this.preco = preco;
-}
-
-Mostrar(){
-    return `<div>${this.nome}</div>`;
- return this.nome + this.datadecadastro + this.descricao + this.preco
-}
-
-}
-
-
-class ProdutoDestaque extends produto{
-    constructor(nome, datadecadastro, descricao, preco, img){
-        super(nome, datadecadastro, descricao, preco);
-        this.img = img;
+    constructor(nome, dataDeCadastro, descricao, preco, img) {
+      this.nome = nome;
+      this.dataDeCadastro = dataDeCadastro;
+      this.descricao = descricao;
+      this.preco = preco;
+      this.img = img;
     }
 
-    Mostrar_destaque(){
-        return `<center><img src="${this.img}"></center> 
-    <center><h2>${this.nome}</h2></center> 
-    <center><h5>Descrição:  ${this.descricao}</h5></center> 
-    <center><h5>Data de Cadastro:  ${this.datadecadastro}</h5></center> <center><h5>Preço:  ${this.preco}</h5></center>`
-
+    mostrar() {
+      return this.nome + ' - ' + this.dataDeCadastro + ' - ' + this.descricao + ' -R$ ' + this.preco;
     }
+  }
+
+  class ProdutoDestaque extends Produto {
+    constructor(nome, dataDeCadastro, descricao, preco, img) {
+      super(nome, dataDeCadastro, descricao, preco);
+      this.img = img;
+    }
+
+    mostrarDestaque() {
+        return this.nome + ' - ' + this.dataDeCadastro + ' - ' + this.descricao + ' - R$ ' + this.preco + '<br><img src="' + this.img + '" class="sla">';
+      }
 }
 
-let Produto = new produto("Colar","27/05/2017","complementar a roupa", 35)
-console.log(produto.Mostrar())
- 
-let ProdutoDestaque = new produtoDestaque("Anel de pedra","28/06/2017","Embelazar as mãos", 15,"https://img.ltwebstatic.com/images3_pi/2021/08/03/1627956390965f0ccbfef1d6b8abc816c5652a68d6_thumbnail_900x.webp")
-console.log(ProdutoDestaque.Mostrar_destaque())
+
+  let produto = new Produto("Colar", "27/05/2017", "complementar a roupa", 35);
+  let produto2 = new Produto("Pulseira","17/12/2007","colocar no pulso", 10);
+  let produto3 = new Produto("brinco","02/02/2022","complementar a roupa", 60);
+  let produtoDestaque = new ProdutoDestaque("Anel de pedra", "28/06/2017", "Embelezar os dedos", 15, "https://img.elo7.com.br/product/600x380/3EB04F2/anel-com-pedra-natural-de-ametista-ametista.jpg");
 
 
-
+  ListaProduto.innerHTML = produto.mostrar();
+  ListaProduto2.innerHTML = produto2.mostrar();
+  ListaProduto3.innerHTML = produto3.mostrar();
+  
+  ListaProdutoDestaque.innerHTML = produtoDestaque.mostrarDestaque();
 
