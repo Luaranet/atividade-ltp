@@ -18,7 +18,7 @@ h1 {
 }
 
 .produto {
-  background-color: #151063;
+  background-color: #930ab2;
   border-radius: 5px;
   margin: 10px;
   padding: 20px;
@@ -32,6 +32,7 @@ h1 {
   margin-bottom: 10px;
   object-fit: cover;
   border-radius: 5px;
+  align-items: center;
 }
 
 .pt{
